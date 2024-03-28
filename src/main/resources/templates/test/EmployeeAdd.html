@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <title>AddEmployee</title>
+</head>
+<body>
+<h1>添加雇员信息</h1>
+<form action="#" th:action="@{/employee/Add}" th:objeact="employee" th:method="post">
+    <label>id:</label>
+    <input type="text" id="id" name="id" required>
+    <br>
+    <label>姓名:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label>年龄:</label>
+    <input type="text" id="age" name="age" required>
+    <br>
+    <label>密码:</label>
+    <input type="text" id="pwd" name="pwd" required>
+    <br>
+    <label>部门:</label>
+    <input type="text" id="depn" name="depn" required>
+    <br>
+    <label>薪水:</label>
+    <input type="text" id="sal" name="sal" required>
+    <br>
+    <button type="submit">添加</button>
+</form>
+<a href="http://127.0.0.1:8080/employee/All"><button>返回显示所有雇员信息页面</button></a>
+</body>
+</html>

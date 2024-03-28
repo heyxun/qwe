@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AddOrder</title>
+</head>
+<body>
+<h1>添加订单</h1>
+<form action="#" th:action="@{/order/add}" th:object="com.smart.water.entity.Order" th:method="post">
+    <label>id:</label>
+    <input type="text" id="id" name="id" required>
+    <br>
+
+    <label>商品名:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label>商品单价:</label>
+    <input type="text" id="price" name="price" required>
+    <br>
+
+    <label>商品数量:</label>
+    <input type="text" id="amount" name="amount" required>
+    <br>
+
+    <label>配送地址:</label>
+    <input type="text" id="address" name="address" required>
+    <br>
+
+    <label>购买者:</label>
+    <input type="text" id="buyer" name="buyer" required>
+    <br>
+</form>
+</body>
+</html>

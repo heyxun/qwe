@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.water.dao.OrderMapper">
+    <!--int insertOrder();-->
+    <insert id="insertOrder">
+        insert into `order` values(null,'water','1.00','1','江苏','张三')
+    </insert>
+    <insert id="addOrder">
+        insert into `order` values (null,
+                                     #{name},
+                                     #{price},
+                                     #{amount},
+                                     #{address},
+                                     #{buyer})
+    </insert>
+    <update id="updateOrder">
+        update `order` set name = 'hot-stone' where id = 1
+    </update>
+    <delete id="deleteOrder" parameterType="int">
+        delete from `order` where id = #{id}
+    </delete>
+    <select id="getOrderById" resultType="Order">
+        select * from `order` where id = #{id}
+    </select>
+    <select id="getOrderByBuyer" parameterType="String" resultType="Order">
+        select * from `order` where buyer = #{name}
+    </select>
+    <select id="getAllOrder" resultType="java.util.List">
+        select * from `order`
+    </select>
+</mapper>

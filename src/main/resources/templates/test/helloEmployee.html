@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--      xmlns:th="http://www.w3.org/1999/xhtml"-->
+<!--      xmlns:th="http://www.thymeleaf.org">-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>IndexDocument</title>
+</head>
+<body>
+    <input th:value="${employee.name}"/>
+
+    <div th:utext="${html}"></div>
+
+    <h1>你好：<span th:text="${employee.name}"></span></h1>
+    <h2>你好：<span th:text="${employee['name']}"></span></h2>
+
+    <div th:object="${employee}">
+        <p>Name：<span th:text="*{name}"></span></p>
+    </div>
+<div th:text="${msg}"></div>
+<h1>你好妈了个巴子</h1>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smart.water.dao.BlogMapper">
+    <!--id与接口中的方法一致，resultType是结果返回-->
+    <select id="getAll" resultType="Blog">
+        select * from blog
+    </select>
+
+    <select id="getAllByAuthorAndTime" resultType="Blog">
+        select * from blog
+        where author = #{author} and date_format(time,'%Y-%m-%d') = #{time}
+    </select>
+    <!--
+       #{}对应的是pojo层实体类的属性名"abcDe"对应的"getAbcDe"的"abcDe"(驼峰命名规范)
+       想简单点，对应属性名就行，复杂可能会乱ovo
+   -->
+    <insert id="insert">
+        insert into blog(id,title,content,author,time)
+        values(null,#{title},#{content},#{author},Now())
+    </insert>
+
+    <delete id="delete" parameterType="id">
+        delete from blog where id = #{id}
+    </delete>
+    <update id="update">
+        update blog set
+                        title=#{title},
+                        content=#{content},
+                        author=#{author}
+        where id=#{id}
+    </update>
+</mapper>

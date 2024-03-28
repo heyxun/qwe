@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1><span th:text="${order.name}"></span>订单信息</h1>
+<table class="list">
+    <tr><th>订单号</th>
+        <th>商品名</th>
+        <th>商品单价</th>
+        <th>商品数量</th>
+        <th>配送地址</th>
+        <th>购买者</th>
+    </tr>
+    <tr th:each="order:${orders}">
+        <td th:text="${order.id}"></td>
+        <td th:text="${order.name}"></td>
+        <td th:text="${order.price}"></td>
+        <td th:text="${order.amount}"></td>
+        <td th:text="${order.address}"></td>
+        <td th:text="${order.buyer}"></td>
+        <td><a th:href="@{'Info/'+${order.id}}" ><button>点击查看</button></a></td>
+    </tr>
+</table>
+</body>
+</html>
